@@ -7,6 +7,7 @@ export const useCartStore = defineStore("cart", {
       name: string;
       price: number;
       quantity: number;
+      image: Blob;
     }[],
   }),
   persist: true,
@@ -22,7 +23,7 @@ export const useCartStore = defineStore("cart", {
     },
   },
   actions: {
-    addItem(item: { id: number; name: string; price: number }) {
+    addItem(item: { id: number; name: string; price: number; image?: Blob }) {
       const existingItem = this.items.find((i) => i.id === item.id);
       if (existingItem) {
         existingItem.quantity++;
@@ -31,7 +32,7 @@ export const useCartStore = defineStore("cart", {
         this.items.push({ ...item, quantity: 1 });
         console.log("Added new item to cart:", { ...item, quantity: 1 });
       }
-    },
+    },  
     removeItem(itemId: number) {
       const existing = this.items.find((i) => i.id === itemId);
       if (!existing) return;
