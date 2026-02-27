@@ -1,7 +1,7 @@
 <template>
   <div>
     <NuxtPage />
-    <MiniPlayer />
+    <!-- <MiniPlayer /> -->
     
   </div>
 </template>

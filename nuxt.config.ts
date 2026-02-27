@@ -7,8 +7,9 @@ export default defineNuxtConfig({
       ]
     },
   ],'pinia-plugin-persistedstate',],
-
-
+  plugins: [
+    '~/plugins/sync-cart.client.ts',
+  ],
   imports: {
     dirs: ['stores'],
   },
