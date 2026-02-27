@@ -24,7 +24,7 @@ const cartStore = useCartStore();
       </div>
 
       <div class="flex flex-row justify-between mt-5">
-        <ul class="bg-white rounded-lg p-6 w-full shadow-md border border-gray-200">
+        <ul class="bg-white rounded-lg p-6 w-full">
           <li v-for="item in cartStore.items" :key="item.id" class="flex justify-between items-center py-6 px-6 shadow-md rounded-lg border border-gray-200">
             <div class="flex items-center">
               <div class="w-24 h-24 bg-gray-200 rounded-md overflow-hidden mr-4">
