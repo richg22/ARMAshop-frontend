@@ -49,7 +49,7 @@ const search = ref("");
             class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm hover:bg-white/10"
             title="Cart" 
           >
-          <ShoppingCart />
+          <Cart />
           </button>
           <button
             class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm hover:bg-white/10"

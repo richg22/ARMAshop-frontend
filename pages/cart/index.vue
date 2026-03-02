@@ -5,13 +5,24 @@ import { Plus, Minus, Trash2, LucideTrash2 } from "lucide-vue-next";
 
 const cartStore = useCartStore();
 
+const isEmpty = computed (()=>{
+
+  const totalItems = cartStore.totalItems;
+  if (totalItems == 0){
+    return true
+  }else{
+    return false
+  }
+
+})
+
 </script>
 
 <template>
   <Navbar />
   <div class="bg-gradient-to-r from-zinc-100 to-zinc-300 h-10 w-full">
   </div>
-  <div>
+  <div v-bind:class="[isEmpty ? 'pb-60' : '','pb-80']">
     <h1 class="text-3xl font-bold text-center mt-10">Carrito de Compras</h1>
       <div v-if="!cartStore.items || cartStore.items.length === 0" class="text-center mt-10 text-zinc-400">
       Tu carrito está vacío.
@@ -65,6 +76,7 @@ const cartStore = useCartStore();
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <style></style>
